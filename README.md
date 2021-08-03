@@ -1,6 +1,7 @@
 # flutter_read_thermo
 
-A new Flutter project.
+Flutterでカメラで写真を撮るサンプルです.
+カメラのアクセスには、権限が必要です。
 
 ## Getting Started
 
