@@ -4,6 +4,8 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
+import 'detect_view.dart';
+
 class CameraView extends StatefulWidget {
   final CameraDescription camera;
 
@@ -46,7 +48,7 @@ class _CameraViewState extends State<CameraView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Read Thermometer'),
+          title: Text('Camera Preview'),
         ),
         body: FutureBuilder<void>(
           future: _initializeControllerFuture,
@@ -64,6 +66,13 @@ class _CameraViewState extends State<CameraView> {
               await _initializeControllerFuture;
               final image = await _controller.takePicture();
               debugPrint('Picture: ${image.path}');
+              await Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => DetectView(
+                    imagePath: image.path,
+                  ),
+                ),
+              );
             } catch (e) {
               // If an error occurs, log the error to the console.
               debugPrint('Picture Error: Error: ${e}');
