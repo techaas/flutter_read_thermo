@@ -27,6 +27,7 @@ class _CameraViewState extends State<CameraView> {
     final CameraController cameraController = CameraController(
       widget.camera,
       ResolutionPreset.high,
+      enableAudio: false,
     );
     _controller = cameraController;
     _initializeControllerFuture = _controller.initialize();
