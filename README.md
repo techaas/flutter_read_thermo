@@ -1,6 +1,9 @@
 # flutter_read_thermo
 
-Flutterでカメラで写真を撮るサンプルです.
+Flutterでカメラで撮った画像の文字認識をします。
+
+[TECHaas - Flutter で画像認識](https://www.techaas.net/post/flutter_read_thermo/) に詳細があります。
+
 カメラのアクセスには、権限が必要です。
 
 ## Getting Started
